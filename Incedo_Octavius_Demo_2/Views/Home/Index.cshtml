@@ -1,0 +1,182 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+
+
+    <div class="container-fluid text-center" style="color:black">
+        <h1 class="display-4">Octavius</h1>
+
+
+
+        <form action="~/Controllers/KOL_Image/Index" method="post" >
+            <div class="row mb-3">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3">
+                </div>
+            </div>
+            <fieldset class="row mb-3">
+                <legend class="col-form-label col-sm-2 pt-0">LoginPage</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                        <label class="form-check-label" for="gridRadios1">
+
+                        </label>
+                        <h2>
+                            @Html.ActionLink("Oncology", "Index", "Oncology", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
+                        </h2>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <label class="form-check-label" for="gridRadios2">
+
+                        </label>
+                        <h2>
+                            @Html.ActionLink("Hematology", "Index", "Hematology", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
+                        </h2>
+                    </div>
+                    <div class="form-check disabled">
+
+
+
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                        <label class="form-check-label" for="gridRadios3">
+
+                        </label>
+                        <h2>
+                            @Html.ActionLink("Business User", "Index", "BusinessUserHome", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
+                        </h2>
+                    </div>
+                </div>
+            </fieldset>
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+        <div class="row container-fluid">
+            <div class="col-md-6 d-flex align-items-center justify-content-center" style="background-color: #2161a2; padding: 50px ">
+                <h2>
+                    @Html.ActionLink("Medical Reps", "Index", "KOL_Image", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
+                </h2>
+            </div>
+
+
+
+            <div class="col-md-6 d-flex align-items-center justify-content-center" style="background-color: #2161a2; padding: 50px ">
+                <h2>
+                    @Html.ActionLink("Business User", "Index", "BusinessUserHome", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
+                </h2>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+    <div class="container">
+
+
+
+        <img class="img-fluid"
+             src="~/Content/img/pexels-andrea-piacquadio-3760089.jpg">
+
+
+
+        <div class="img-overlay">
+
+            <button class="btn btn-primary" onclick="location.href='https://localhost:44342/KOL_Image' " background-size:100%></button>
+
+
+
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>-->
+<link href="~/Content/Style.css" rel="stylesheet" type="text/css" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Login | OCTAVIUS</title>
+</head>
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form asp-action="Index" class="sign-in-form" method="post">
+                    <h2 class="title">Sign in</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username" name="uname" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" name="password" />
+                    </div>
+                    <input type="submit" value="Login" class="btn solid" />
+                </form>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>OCTAVIUS</h3>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
+                        ex ratione. Aliquid!
+                    </p>
+                </div>
+                <img src="~/Content/img/log.svg" class="image" alt="" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>
