@@ -10,13 +10,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-
-
-
     <div class="container-fluid text-center" style="color:black">
         <h1 class="display-4">Octavius</h1>
 
@@ -44,7 +41,7 @@
 
                         </label>
                         <h2>
-                            @Html.ActionLink("Oncology", "Index", "Oncology", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
+@Html.ActionLink("Oncology", "Index", "Oncology", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
                         </h2>
                     </div>
                     <div class="form-check">
@@ -53,7 +50,7 @@
 
                         </label>
                         <h2>
-                            @Html.ActionLink("Hematology", "Index", "Hematology", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
+@Html.ActionLink("Hematology", "Index", "Hematology", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
                         </h2>
                     </div>
                     <div class="form-check disabled">
@@ -65,7 +62,7 @@
 
                         </label>
                         <h2>
-                            @Html.ActionLink("Business User", "Index", "BusinessUserHome", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
+@Html.ActionLink("Business User", "Index", "BusinessUserHome", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
                         </h2>
                     </div>
                 </div>
@@ -73,19 +70,10 @@
 
         </form>
 
-
-
-
-
-
-
-
-
-
         <div class="row container-fluid">
             <div class="col-md-6 d-flex align-items-center justify-content-center" style="background-color: #2161a2; padding: 50px ">
                 <h2>
-                    @Html.ActionLink("Medical Reps", "Index", "KOL_Image", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
+@Html.ActionLink("Medical Reps", "Index", "KOL_Image", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
                 </h2>
             </div>
 
@@ -93,7 +81,7 @@
 
             <div class="col-md-6 d-flex align-items-center justify-content-center" style="background-color: #2161a2; padding: 50px ">
                 <h2>
-                    @Html.ActionLink("Business User", "Index", "BusinessUserHome", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
+@Html.ActionLink("Business User", "Index", "BusinessUserHome", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
                 </h2>
 
 
@@ -131,11 +119,11 @@
     <br />
     <br />
     <br />
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
 </body>
 </html>-->
-<link href="~/Content/Style.css" rel="stylesheet" type="text/css" />
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -144,42 +132,28 @@
     <script src="https://kit.fontawesome.com/64d58efce2.js"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
+    <link href="~/Content/Style.css" rel="stylesheet" type="text/css" />
     <title>Login | OCTAVIUS</title>
 </head>
 <body>
-
     <div class ="container">
-
         <div class ="forms-container">
-
             <div class ="signin-signup">
-
                 <form asp-action ="Index" class="sign-in-form" method="post">
-
                     <h4 class="title">
-
-
                         <img src="~/Content/img/indecologo.png" />
 
                     </h4>
-
                         <h2 class ="title">
                             Sign in</h2>
-
                             <div class ="input-field">
-
                                 <i class ="fas fa-user">
                                     </i>
-
                                     <input type ="text" placeholder="Username" name="uname" />
-
                                     </div>
-
                                     <div class ="input-field">
-
                                         <i class ="fas fa-lock">
                                             </i>
-
                                             <input type ="password" placeholder="Password" name="password" />
 
                                             </div>
