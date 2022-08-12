@@ -3,7 +3,8 @@
 @{
     ViewBag.Title = "Index";
 }
-
+<link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css">
+@Styles.Render("~/Content/css")
 <h2>Degree Business Rules</h2>
 
 <p>
@@ -20,20 +21,21 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Degree_Map)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Degree_Master)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MapID }) |
-            @*@Html.ActionLink("Details", "Details", new { id=item.MapID }) |*@
-            @Html.ActionLink("Delete", "Delete", new { id=item.MapID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+            <tr>
+                <td>
+                @Html.DisplayFor(modelItem => item.Degree_Map)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Degree_Master)
+                </td>
+                <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.MapID }) |
+                @*@Html.ActionLink("Details", "Details", new { id=item.MapID }) |*@
+                @Html.ActionLink("Delete", "Delete", new { id=item.MapID })
+                </td>
+            </tr>
+    }
 
 </table>
