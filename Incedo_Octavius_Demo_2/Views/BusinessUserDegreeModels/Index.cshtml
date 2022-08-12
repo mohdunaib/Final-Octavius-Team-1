@@ -3,39 +3,54 @@
 @{
     ViewBag.Title = "Index";
 }
-<link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css">
-@Styles.Render("~/Content/css")
-<h2>Degree Business Rules</h2>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css">
+    <title>Bussiness Users | Degree</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <h2>Degree Business Rules</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table table-primary table-hover">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Degree_Map)
+                @Html.DisplayNameFor(model => model.Degree_Map)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Degree_Master)
+                @Html.DisplayNameFor(model => model.Degree_Master)
         </th>
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-            <tr>
-                <td>
-                @Html.DisplayFor(modelItem => item.Degree_Map)
-                </td>
-                <td>
-                @Html.DisplayFor(modelItem => item.Degree_Master)
-                </td>
-                <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.MapID }) |
-                @*@Html.ActionLink("Details", "Details", new { id=item.MapID }) |*@
-                @Html.ActionLink("Delete", "Delete", new { id=item.MapID })
-                </td>
-            </tr>
-    }
+        @foreach (var item in Model)
+        {
+                                <tr>
+                                    <td>
+                    @Html.DisplayFor(modelItem => item.Degree_Map)
+                                    </td>
+                                    <td>
+                    @Html.DisplayFor(modelItem => item.Degree_Master)
+                                    </td>
+                                    <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.MapID }) |
+                    @*@Html.ActionLink("Details", "Details", new { id=item.MapID }) |*@
+                    @Html.ActionLink("Delete", "Delete", new { id=item.MapID })
+                                    </td>
+                                </tr>
+        }
 
 </table>
+
+</body>
+</html>
