@@ -18,7 +18,9 @@
 </head>
 <body>
     <h2>Degree Business Rules</h2>
-    @Html.ActionLink("Create New", "Create", new { @class = "btn btn-primary" })
+    <button class="btn btn-primary"> Create New
+        @Html.ActionLink(" ", "Create", new { @class = "btn btn-primary" })
+    </button>
 
 <table class="table table-primary table-hover">
     <tr>
@@ -33,20 +35,20 @@
 
         @foreach (var item in Model)
         {
-                                                                <tr>
-                                                                    <td>
+                                                                            <tr>
+                                                                                <td>
                     @Html.DisplayFor(modelItem => item.Degree_Map)
-                                                                    </td>
-                                                                    <td>
+                                                                                </td>
+                                                                                <td>
                     @Html.DisplayFor(modelItem => item.Degree_Master)
-                                                                    </td>
-                                                                    <td>
+                                                                                </td>
+                                                                                <td>
 
-                    @Html.ActionLink("Edit", "Edit", new { id=item.MapID }) |
+                    @Html.ActionLink("Edit", "Edit", new { id=item.MapID}) |
 
 
                     @Html.ActionLink("Delete", "Delete", new { id=item.MapID })                                                     </td>
-                                                                </tr>
+                                                                            </tr>
         }
 
 </table>
