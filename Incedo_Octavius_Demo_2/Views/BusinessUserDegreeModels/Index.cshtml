@@ -21,7 +21,7 @@
 
 <button class="btn btn-primary">
         Create New Degree
-        @Html.ActionLink("", "Create")
+        @Html.ActionLink(" ", "Create")
 </button>
 <table class="table table-primary table-hover">
     <tr>
@@ -36,21 +36,21 @@
 
         @foreach (var item in Model)
         {
-                                            <tr>
-                                                <td>
+                                                <tr>
+                                                    <td>
                     @Html.DisplayFor(modelItem => item.Degree_Map)
-                                                </td>
-                                                <td>
+                                                    </td>
+                                                    <td>
                     @Html.DisplayFor(modelItem => item.Degree_Master)
-                                                </td>
-                                                <td>
-                              <button class="btn btn-warning">  Edit                    
+                                                    </td>
+                                                    <td>
+                                  <button class="btn btn-warning">  Edit                    
                         @Html.ActionLink("Edit", "Edit", new { id=item.MapID }) |
-                            </button>
-                            <button class="btn btn-danger"> Delete
+                                </button>
+                                <button class="btn btn-danger"> Delete
                         @Html.ActionLink("Delete", "Delete", new { id=item.MapID }) </button>
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                </tr>
         }
 
 </table>
