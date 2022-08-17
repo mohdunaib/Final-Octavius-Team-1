@@ -34,20 +34,20 @@
 
         @foreach (var item in Model)
         {
-                                                                                                                    <tr>
-                                                                                                                        <td>
+                                                                                                                        <tr>
+                                                                                                                            <td>
                     @Html.DisplayFor(modelItem => item.Degree_Map)
-                                                                                                                        </td>
-                                                                                                                        <td>
+                                                                                                                            </td>
+                                                                                                                            <td>
                     @Html.DisplayFor(modelItem => item.Degree_Master)
-                                                                                                                        </td>
-                                                                                                                        <td>
+                                                                                                                            </td>
+                                                                                                                            <td>
 
                     @* @Html.ActionLink("Edit", "Edit", new { id=item.MapID})  *@
-                                        <button class = "btn btn-warning" onclick="location.href='@Url.Action("Edit", new {id=item.MapID})'">Edit</button> |
-                                        <button class = "btn btn-danger" onclick="location.href='@Url.Action("Delete", new {id=item.MapID})'">Delete</button>
+                                            <button class = "btn btn-warning" onclick="location.href='@Url.Action("Edit", new {id=item.MapID})'">Edit</button> 
+                                            <button class = "btn btn-danger" onclick="location.href='@Url.Action("Delete", new {id=item.MapID})'">Delete</button>
                     @* @Html.ActionLink("Delete", "Delete", new { id=item.MapID })  *@                                                   </td>
-                                                                                                                    </tr>
+                                                                                                                        </tr>
         }
 
 </table>
