@@ -34,20 +34,20 @@
 
         @foreach (var item in Model)
         {
-                                                                                                    <tr>
-                                                                                                        <td>
+                                                                                                        <tr>
+                                                                                                            <td>
                     @Html.DisplayFor(modelItem => item.Degree_Map)
-                                                                                                        </td>
-                                                                                                        <td>
+                                                                                                            </td>
+                                                                                                            <td>
                     @Html.DisplayFor(modelItem => item.Degree_Master)
-                                                                                                        </td>
-                                                                                                        <td>
+                                                                                                            </td>
+                                                                                                            <td>
 
                     @* @Html.ActionLink("Edit", "Edit", new { id=item.MapID})  *@
-                        <button onclick="location.href='@Url.Action('Edit','Edit', new {id=item.MapID})'">Cancel</button> |
+                            <button onclick="location.href='@Url.Action("Edit","Edit", new {id=item.MapID})'">Cancel</button> |
 
                     @Html.ActionLink("Delete", "Delete", new { id=item.MapID })                                                     </td>
-                                                                                                    </tr>
+                                                                                                        </tr>
         }
 
 </table>
