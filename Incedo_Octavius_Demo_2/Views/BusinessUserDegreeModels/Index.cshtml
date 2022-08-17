@@ -43,8 +43,8 @@
                                                                                                         </td>
                                                                                                         <td>
 
-                    @Html.ActionLink(""+@T("Edit"), "Edit", new { id=item.MapID}, new { @class="btn btn-warning"}) |
-
+                    @* @Html.ActionLink("Edit", "Edit", new { id=item.MapID})  *@
+                        <button onclick="location.href='@Url.Action('Edit','Edit', new {id=item.MapID})'">Cancel</button> |
 
                     @Html.ActionLink("Delete", "Delete", new { id=item.MapID })                                                     </td>
                                                                                                     </tr>
