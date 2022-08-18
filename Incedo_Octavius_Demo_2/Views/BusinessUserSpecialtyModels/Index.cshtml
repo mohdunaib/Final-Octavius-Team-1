@@ -7,7 +7,8 @@
 <h2>Speciality Business Rules</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @* @Html.ActionLink("Create New", "Create") *@
+    @Html.ActionLink("Create New", "Create", routeValues: null, htmlAttributes: new { @class = "btn btn-primary", @role = "button" })
 </p>
 <table class="table table-primary table-hover">
     <tr>
@@ -20,20 +21,22 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SpecialtyMap)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SpecialtyMaster)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.MapID }) |
-            @*@Html.ActionLink("Details", "Details", new { id=item.MapID }) |*@
-            @Html.ActionLink("Delete", "Delete", new { id = item.MapID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+                    <tr>
+                        <td>
+                @Html.DisplayFor(modelItem => item.SpecialtyMap)
+                        </td>
+                        <td>
+                @Html.DisplayFor(modelItem => item.SpecialtyMaster)
+                        </td>
+                        <td>
+                @* @Html.ActionLink("Edit", "Edit", new { id = item.MapID }) | *@
+                            <button class = "btn btn-warning" onclick="location.href='@Url.Action("Edit", new {id=item.MapID})'">Edit</button> 
+                            <button class = "btn btn-danger" onclick="location.href='@Url.Action("Delete", new {id=item.MapID})'">Delete</button>
+                @* @Html.ActionLink("Delete", "Delete", new { id = item.MapID }) *@
+                        </td>
+                    </tr>
+    }
 
 </table>
