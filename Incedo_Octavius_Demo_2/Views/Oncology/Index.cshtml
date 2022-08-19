@@ -37,17 +37,17 @@
     <div class="row">
         @foreach (var item in Model)
         {
-                    <div class="col-md-3" style="width:200px;">
-                        <div class="card my_card">
-                            <img src="@item.Image_URL" class="card-img-top rounded-circle my_img" alt="Dummy Profile Pic">
-                            <div class="card-body">
+                        <div class="col-md-3" style="width:200px;margin:30px">
+                            <div class="card my_card">
+                                <img src="@item.Image_URL" class="card-img-top rounded-circle my_img" alt="Dummy Profile Pic">
+                                <div class="card-body">
 
-                                <h5 class="card-title">
+                                    <h5 class="card-title">
                             @Html.ActionLink(item.First_Name+" "+item.Last_Name, "Details", "KOL_Details", new { id = item.kolID }, null)
-                                </h5>
+                                    </h5>
+                                </div>
                             </div>
                         </div>
-                    </div>
         }
     </div>
 
