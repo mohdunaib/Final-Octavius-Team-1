@@ -17,7 +17,10 @@
 
     <style>
         .my_card{
+            display:flex;
             border: none !important;
+            align-items: center;
+            text-align: center;
         }
         .my_img{
             width: 250px;
@@ -37,7 +40,7 @@
         <br />
     </div>
 
-    <div class="row" style="margin-left:60px;">
+    <div class="row">
         @foreach (var item in Model)
         {
             <div class="col-md-3">
