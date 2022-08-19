@@ -11,45 +11,61 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
 
-    <br />
-    <br />
-    <br />
-    <br />
+    <style>
+        .my_btn {
+            margin-top: 350px;
+            border: 5px solid #5f0513;
+            border-radius: 40px;
+            padding: 20px;
+            font-size: 35px;
+            height: 100px;
+            width: 240px;
+            box-shadow: black 2px 2px 2px;
+            background-color: #be5723;
+            color:white;
+        }
+        .my_img {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            -webkit-filter: blur(8px); /* Safari 6.0 - 9.0 */
+            filter: blur(8px);
+        }
+
+    </style>
+
+</head>
+<body">
+
+  <img  class="my_img" src="../../Content/img/illustration.jpg"/>
 
 
     <div class="container-fluid text-center" style="color:black">
 
         <div class="row container-fluid">
 
-            <div class="col-md-6 d-flex align-items-center justify-content-center" style="background-color: #ffffff; padding: 10px">
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
 
                 <h2>
-                    @Html.ActionLink("Degree", "Index", "BusinessUserDegreeModels", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
+
+                    @Html.ActionLink("Degree", "Index", "BusinessUserDegreeModels", routeValues: null, htmlAttributes: new { @class = "btn btn-lg my_btn", @role = "button" })
                 </h2>
             </div>
-            <div class="col-md-6 d-flex align-items-center justify-content-center" style="background-color: #ffffff; padding: 10px">
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
                 <h2>
-                    @Html.ActionLink("Speciality", "Index", "BusinessUserSpecialtyModels", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
+                    @Html.ActionLink("Speciality", "Index", "BusinessUserSpecialtyModels", routeValues: null, htmlAttributes: new { @class = "btn btn-lg my_btn", @role = "button" })
                 </h2>
             </div>
-            <img src="~/Content/img/illustration.jpg" />
+
         </div>
-        
+
     </div>
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+    
     @*@{Html.RenderAction("Index", "BusinessUserDegreeModels"); }*@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
