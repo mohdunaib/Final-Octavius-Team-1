@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Business User Home Page";
+    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -22,16 +23,19 @@
     <div class="container-fluid text-center" style="color:black">
 
         <div class="row container-fluid">
-            <div class="col-md-6 d-flex align-items-center justify-content-center" style="background-color: #2161a2; padding: 50px">
+
+            <div class="col-md-6 d-flex align-items-center justify-content-center" style="background-color: #ffffff; padding: 10px">
+
                 <h2>
                     @Html.ActionLink("Degree", "Index", "BusinessUserDegreeModels", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
                 </h2>
             </div>
-            <div class="col-md-6 d-flex align-items-center justify-content-center" style="background-color: #2161a2; padding: 50px">
+            <div class="col-md-6 d-flex align-items-center justify-content-center" style="background-color: #ffffff; padding: 10px">
                 <h2>
                     @Html.ActionLink("Speciality", "Index", "BusinessUserSpecialtyModels", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info btn-lg", @role = "button" })
                 </h2>
             </div>
+            <img src="~/Content/img/illustration.jpg" />
         </div>
         
     </div>

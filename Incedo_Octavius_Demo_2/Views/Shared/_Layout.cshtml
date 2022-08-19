@@ -10,7 +10,7 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color: #4d84e2; ">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color: #4d84e2; height:80px">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     <img src="~/Content/img/logo_200x200.png" height="100" width="100" />
@@ -29,41 +29,44 @@
                         <li class="nav-item">
                             <span class="nav-link text-dark">@Html.ActionLink("Medical Reps", "Index", "KOL_Image", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info ", @role = "button" })</span>
                         </li>
-                        <li class="nav-item">
+                      <!---  <li class="nav-item">
                             <span class="nav-link text-dark">@Html.ActionLink("Business User", "Index", "BusinessUserHome", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info ", @role = "button" })</span>
+                        </li>  -->
+                        <li class="nav-item">
+                            <span class="nav-link text-dark">@Html.ActionLink("Sign out", "Index", "Home", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-info ", @role = "button" })</span>
                         </li>
 
                         <!--
-        <li class="nav-item">
-            <span class="nav-link text-dark"> @Html.ActionLink("About", "About", "Home")</span>
-        </li>
-        <li class="nav-item">
-            <span class="nav-link text-dark">@Html.ActionLink("Privacy", "Privacy", "Home")</span>
-        </li>
-        <li class="nav-item">
-            <span class="nav-link text-dark">@Html.ActionLink("Team", "Team", "Home")</span>
-        </li>
-        <li class="nav-item">
-            <span class="nav-link text-dark">@Html.ActionLink("KOL", "Index", "kol_table")</span>
-        </li>
-        <li class="nav-item">
-            <span class="nav-link text-dark">@Html.ActionLink("Degree", "Index", "degree_master_table")</span>
-        </li>
-        <li class="nav-item">
-            <span class="nav-link text-dark">@Html.ActionLink("KOL Degree Map", "Index", "kol_degree_map_table")</span>
-        </li>
-        <li class="nav-item">
-            <span class="nav-link text-dark">@Html.ActionLink("KOL Degree Spec", "Index", "Kol_With_Degree")</span>
-        </li>
-        <li class="nav-item">
-            <span class="nav-link text-dark">@Html.ActionLink("KOL Image", "Index", "KOL_Image")</span>
-        </li>
-        <li class="nav-item">
-            <span class="nav-link text-dark">@Html.ActionLink("KOL Details", "Index", "KOL_Details")</span>
-        </li>
+    <li class="nav-item">
+        <span class="nav-link text-dark"> @Html.ActionLink("About", "About", "Home")</span>
+    </li>
+    <li class="nav-item">
+        <span class="nav-link text-dark">@Html.ActionLink("Privacy", "Privacy", "Home")</span>
+    </li>
+    <li class="nav-item">
+        <span class="nav-link text-dark">@Html.ActionLink("Team", "Team", "Home")</span>
+    </li>
+    <li class="nav-item">
+        <span class="nav-link text-dark">@Html.ActionLink("KOL", "Index", "kol_table")</span>
+    </li>
+    <li class="nav-item">
+        <span class="nav-link text-dark">@Html.ActionLink("Degree", "Index", "degree_master_table")</span>
+    </li>
+    <li class="nav-item">
+        <span class="nav-link text-dark">@Html.ActionLink("KOL Degree Map", "Index", "kol_degree_map_table")</span>
+    </li>
+    <li class="nav-item">
+        <span class="nav-link text-dark">@Html.ActionLink("KOL Degree Spec", "Index", "Kol_With_Degree")</span>
+    </li>
+    <li class="nav-item">
+        <span class="nav-link text-dark">@Html.ActionLink("KOL Image", "Index", "KOL_Image")</span>
+    </li>
+    <li class="nav-item">
+        <span class="nav-link text-dark">@Html.ActionLink("KOL Details", "Index", "KOL_Details")</span>
+    </li>
 
-                    </ul>-->
-                </div>
+                </ul>-->
+</div>
             </div>
         </nav>
     </header>

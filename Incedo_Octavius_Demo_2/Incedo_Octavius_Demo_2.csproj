@@ -389,6 +389,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\img\dummy-profile-pic.jpg" />
+    <Content Include="Content\img\illustration.jpg" />
     <Content Include="Content\img\indecologo.png" />
     <Content Include="Content\img\log.svg" />
     <Content Include="Content\img\logo_200x200.png" />

@@ -1,6 +1,7 @@
 ﻿using Incedo_Octavius_Demo_2.Data;
 using Incedo_Octavius_Demo_2.Models;
 using MySql.Data.MySqlClient;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PagedList.Mvc;
 
 namespace Incedo_Octavius_Demo_2.Controllers
 {
@@ -94,7 +96,7 @@ namespace Incedo_Octavius_Demo_2.Controllers
         }
 
         // GET: KOL_Image
-        public ActionResult Index()
+        public ActionResult Index(int ? page)
         {
             List<KOL_Image> kolNameImageList = new List<KOL_Image>();
             string constr = ConfigurationManager.ConnectionStrings["Incedo_Octavius_Demo_2_kol_table_Context"].ConnectionString;
@@ -107,9 +109,9 @@ namespace Incedo_Octavius_Demo_2.Controllers
                     MySqlCommand cmd = new MySqlCommand();
                     cmd.Connection = dbConnection;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "KOL_Name_Image";
+                    cmd.CommandText = "KOL_Image";
                     cmd.Parameters.AddWithValue("profileStatus", 2);
-                    cmd.Parameters.AddWithValue("TA_ID", 1);
+                    
                     //cmd.ExecuteReader();
 
                     MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd);
@@ -138,11 +140,11 @@ namespace Incedo_Octavius_Demo_2.Controllers
 
             }
 
-            return View(kolNameImageList);
+            return View(kolNameImageList.ToList().ToPagedList(page ?? 1, 8));
         }
 
         [HttpPost]
-        public ActionResult Index(int profile)
+        public ActionResult Index(int profile, int ? page)
         {
             List<KOL_Image> kolNameImageList = new List<KOL_Image>();
             string constr = ConfigurationManager.ConnectionStrings["Incedo_Octavius_Demo_2_kol_table_Context"].ConnectionString;
@@ -155,9 +157,9 @@ namespace Incedo_Octavius_Demo_2.Controllers
                     MySqlCommand cmd = new MySqlCommand();
                     cmd.Connection = dbConnection;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "KOL_Name_Image";
+                    cmd.CommandText = "KOL_Image";
                     cmd.Parameters.AddWithValue("profileStatus", profile);
-                    cmd.Parameters.AddWithValue("TA_ID", 1);
+                  
                     //cmd.ExecuteReader();
 
                     MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd);
@@ -186,7 +188,7 @@ namespace Incedo_Octavius_Demo_2.Controllers
 
             }
 
-            return View(kolNameImageList);
+            return View(kolNameImageList.ToList().ToPagedList(page ?? 1, 8));
         }
 
     }
