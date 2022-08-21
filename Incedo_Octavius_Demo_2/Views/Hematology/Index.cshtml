@@ -1,9 +1,17 @@
 ﻿@model IPagedList<Incedo_Octavius_Demo_2.Models.KOL_Image>
 @{
-    ViewBag.Title = "Index"; 
+    ViewBag.Title = "Index";
 }
 @using PagedList.Mvc;
 @using PagedList;
+@using (Html.BeginForm("Index", "Hematology", FormMethod.Get))
+{
+
+    @Html.RadioButton("option", "FirstName", true)<i> FirstName</i>
+    @Html.RadioButton("option", "LastName")<i> LastName</i>
+    @Html.TextBox("search")
+    <input type="submit" value="Search" />
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,13 +25,14 @@
     @Scripts.Render("~/bundles/modernizr")
 
     <style>
-        .my_card{
-            display:flex;
+        .my_card {
+            display: flex;
             border: none !important;
             align-items: center;
             text-align: center;
         }
-        .my_img{
+
+        .my_img {
             width: 250px;
             height: 250px;
             box-shadow: 0 0 20px;
