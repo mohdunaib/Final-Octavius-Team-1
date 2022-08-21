@@ -12,6 +12,16 @@
     <title>Index</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+    .my_img{ 
+    width: 400px;
+    height: 500px;
+    border-radius: 15%;
+    box-shadow: 0 0 10px;
+    margin-left: 30px;
+    }
+    </style>
 </head>
 <body>
     <div class="justify-content-between">
@@ -23,7 +33,7 @@
     @foreach (var item in Model)
     {
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 my_img">
                 <img src="@item.Image_Link" class="card-img-top" alt="Dummy Profile Pic" style="object-fit:cover">
             </div>
             <div class="col-md-8">
