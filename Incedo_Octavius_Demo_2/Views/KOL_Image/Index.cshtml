@@ -14,6 +14,20 @@
     <title>Index</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        .my_card{
+            display:flex;
+            border: none !important;
+            align-items: center;
+            text-align: center;
+        }
+        .my_img{
+            width: 250px;
+            height: 250px;
+            box-shadow: 0px 0px 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="justify-content-between">
@@ -30,8 +44,8 @@
         @foreach (var item in Model)
         {
             <div class="col-md-3">
-                <div class="card">
-                    <img src="@item.Image_URL" class="card-img-top rounded-circle" alt="Dummy Profile Pic" width="300" height="300">
+                <div class="card my_card">
+                <img src="@item.Image_URL" class="card-img-top rounded-circle my_img" alt="Dummy Profile Pic">
                     <div class="card-body">
                         <h5>
                             @Html.ActionLink(item.First_Name + " " + item.Last_Name, "Details", "KOL_Details", new { id = item.kolID }, null)
