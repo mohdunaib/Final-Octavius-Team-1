@@ -18,7 +18,7 @@ namespace Incedo_Octavius_Demo_2.Controllers
         // GET: Oncology
         private Incedo_Octavius_Demo_2_kol_degree_map_table_Context db = new Incedo_Octavius_Demo_2_kol_degree_map_table_Context();
         // GET: KOL_Image
-        public ActionResult Index(int? page)
+        public ActionResult Index(int? page,string option, string search)
         {
             List<KOL_Image> kolNameImageList = new List<KOL_Image>();
             string constr = ConfigurationManager.ConnectionStrings["Incedo_Octavius_Demo_2_kol_table_Context"].ConnectionString;
@@ -52,6 +52,14 @@ namespace Incedo_Octavius_Demo_2.Controllers
 
                             kolNameImageList.Add(kolImage);
                         }
+                    }
+                    if (option == "FirstName")
+                    {
+                        return View(kolNameImageList.Where(s => s.First_Name.ToLower() == search || s.First_Name.ToUpper() == search || search == null).ToList().ToPagedList(page ?? 1, 8));
+                    }
+                    else
+                    {
+                        return View(kolNameImageList.Where(s => s.Last_Name.ToLower() == search || s.Last_Name.ToUpper() == search || search == null).ToList().ToPagedList(page ?? 1, 8));
                     }
                 }
                 catch (Exception Ex)

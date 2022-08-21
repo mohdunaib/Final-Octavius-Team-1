@@ -1,9 +1,17 @@
 ﻿@model IPagedList<Incedo_Octavius_Demo_2.Models.KOL_Image>
 @{
-    ViewBag.Title = "Index"; 
+    ViewBag.Title = "Index";
 }
 @using PagedList.Mvc;
 @using PagedList;
+@using (Html.BeginForm("Index", "Oncology", FormMethod.Get))
+{
+
+    @Html.RadioButton("option", "FirstName", true)<i> FirstName</i>
+    @Html.RadioButton("option", "LastName")<i> LastName</i>
+    @Html.TextBox("search")
+    <input type="submit" value="Search" />
+}
 
 <!DOCTYPE html>
 <html>
@@ -16,14 +24,16 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+
     <style>
-        .my_card{
-            display:flex;
+        .my_card {
+            display: flex;
             border: none !important;
             align-items: center;
             text-align: center;
         }
-        .my_img{
+
+        .my_img {
             width: 250px;
             height: 250px;
             box-shadow: 0 0 20px;
@@ -47,7 +57,7 @@
                     <div class="card-body">
 
                         <h4 class="card-title">
-                            @Html.ActionLink(item.First_Name+" "+item.Last_Name, "Details", "KOL_Details", new { id = item.kolID }, null)
+                            @Html.ActionLink(item.First_Name + " " + item.Last_Name, "Details", "KOL_Details", new { id = item.kolID }, null)
                         </h4>
                     </div>
                 </div>
@@ -59,6 +69,7 @@
     @Scripts.Render("~/bundles/bootstrap")
 </body>
 </html>
+
 <div class="pagination">
     @Html.PagedListPager(Model, page => Url.Action("Index", "Oncology", new { page }))
 </div>
