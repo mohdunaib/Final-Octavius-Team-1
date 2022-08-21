@@ -32,113 +32,113 @@
     </div>
     @foreach (var item in Model)
     {
-        <div class="row">
-            <div class="col-md-4 my_img">
-                <img src="@item.Image_Link" class="card-img-top" alt="Dummy Profile Pic" style="object-fit:cover">
-            </div>
-            <div class="col-md-8">
-                <table class="table">
-                    <tr>
-                        <th>
+            <div class="row">
+                <div class="col-md-4 ">
+                    <img src="@item.Image_Link" class="card-img-top my_img" alt="Dummy Profile Pic" style="object-fit:cover">
+                </div>
+                <div class="col-md-8">
+                    <table class="table">
+                        <tr>
+                            <th>
                             @Html.DisplayNameFor(model => model.KolID)
-                        </th>
-                        <td>
+                            </th>
+                            <td>
                             @Html.DisplayFor(ModelItem => item.KolID)
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
                             @Html.DisplayNameFor(model => model.MDMID)
-                        </th>
-                        <td>
+                            </th>
+                            <td>
                             @Html.DisplayFor(ModelItem => item.MDMID)
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
                             @Html.DisplayNameFor(model => model.First_Name)
-                        </th>
-                        <td>
+                            </th>
+                            <td>
                             @Html.DisplayFor(ModelItem => item.First_Name)
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
                             @Html.DisplayNameFor(model => model.Last_Name)
-                        </th>
-                        <td>
+                            </th>
+                            <td>
                             @Html.DisplayFor(ModelItem => item.Last_Name)
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
                             @Html.DisplayNameFor(model => model.Mail)
-                        </th>
-                        <td>
+                            </th>
+                            <td>
                             @Html.DisplayFor(ModelItem => item.Mail)
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
                             @Html.DisplayNameFor(model => model.Address)
-                        </th>
-                        <td>
+                            </th>
+                            <td>
                             @Html.DisplayFor(ModelItem => item.Address)
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
                             @Html.DisplayNameFor(model => model.City)
-                        </th>
-                        <td>
+                            </th>
+                            <td>
                             @Html.DisplayFor(ModelItem => item.City)
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
                             @Html.DisplayNameFor(model => model.State)
-                        </th>
-                        <td>
+                            </th>
+                            <td>
                             @Html.DisplayFor(ModelItem => item.State)
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
                             @Html.DisplayNameFor(model => model.Zip)
-                        </th>
-                        <td>
+                            </th>
+                            <td>
                             @Html.DisplayFor(ModelItem => item.Zip)
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
                             @Html.DisplayNameFor(model => model.ProfileStatus)
-                        </th>
-                        <td>
+                            </th>
+                            <td>
                             @Html.DisplayFor(ModelItem => item.ProfileStatus)
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
                             @Html.DisplayNameFor(model => model.Degree)
-                        </th>
-                        <td>
+                            </th>
+                            <td>
                             @Html.DisplayFor(ModelItem => item.Degree)
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
                             @Html.DisplayNameFor(model => model.SpecialityName)
-                        </th>
-                        <td>
+                            </th>
+                            <td>
                             @Html.DisplayFor(ModelItem => item.SpecialityName)
-                        </td>
-                    </tr>
-                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-        </div>
-        <hr />
-        <br/>
+            <hr />
+            <br/>
     }
 
     @Scripts.Render("~/bundles/jquery")
