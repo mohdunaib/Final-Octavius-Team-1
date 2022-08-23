@@ -10,12 +10,12 @@
     @* @Html.ActionLink("Create New", "Create") *@
     @Html.ActionLink("Create New", "Create", routeValues: null, htmlAttributes: new { @class = "btn btn-primary", @role = "button" })
 </p>
-<form asp-action="Index">
-    <div class="input-group">
-        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-        <button type="button" class="btn btn-outline-primary">search</button>
-    </div>
-</form>
+@using (Html.BeginForm("Index", "BusinessUserSpecialtyModels", FormMethod.Get))
+{@Html.TextBox("search")
+<input type="submit" value="Search" />
+}
+<br />
+
 <table class="table table-primary table-hover">
     <tr>
         <th>
@@ -29,20 +29,20 @@
 
     @foreach (var item in Model)
     {
-                    <tr>
-                        <td>
+        <tr>
+            <td>
                 @Html.DisplayFor(modelItem => item.SpecialtyMap)
-                        </td>
-                        <td>
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.SpecialtyMaster)
-                        </td>
-                        <td>
+            </td>
+            <td>
                 @* @Html.ActionLink("Edit", "Edit", new { id = item.MapID }) | *@
-                            <button class = "btn btn-warning" onclick="location.href='@Url.Action("Edit", new {id=item.MapID})'">Edit</button> 
-                            <button class = "btn btn-danger" onclick="location.href='@Url.Action("Delete", new {id=item.MapID})'">Delete</button>
+                <button class="btn btn-warning" onclick="location.href='@Url.Action("Edit", new {id=item.MapID})'">Edit</button>
+                <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", new {id=item.MapID})'">Delete</button>
                 @* @Html.ActionLink("Delete", "Delete", new { id = item.MapID }) *@
-                        </td>
-                    </tr>
+            </td>
+        </tr>
     }
 
 </table>

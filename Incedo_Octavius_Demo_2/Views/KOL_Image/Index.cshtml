@@ -37,7 +37,13 @@
         <h2 class="text-dark text-center alert-heading">
             KOL
         </h2>
+        @using (Html.BeginForm("Index", "KOL_Image", FormMethod.Get))
+        {@Html.TextBox("search") <input type="submit" value="Search" />}
         <br />
+
+
+
+
     </div>
 
     <div class="row">

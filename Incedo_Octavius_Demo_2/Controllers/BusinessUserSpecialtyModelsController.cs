@@ -19,7 +19,7 @@ namespace Incedo_Octavius_Demo_2.Controllers
         public string constr = ConfigurationManager.ConnectionStrings["Incedo_Octavius_Demo_2_BU_Spec_Context"].ConnectionString;
 
         // GET: BusinessUserSpecialtyModels
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
             List<BusinessUserSpecialtyModel> Spec_BU_List = new List<BusinessUserSpecialtyModel>();
             //string constr = ConfigurationManager.ConnectionStrings["Incedo_Octavius_Demo_2_kol_table_Context"].ConnectionString;
@@ -52,6 +52,7 @@ namespace Incedo_Octavius_Demo_2.Controllers
                             Spec_BU_List.Add(SpecBU);
                         }
                     }
+                    return View(Spec_BU_List.Where(s => s.SpecialtyMaster.ToLower().StartsWith(search) || s.SpecialtyMaster.ToUpper().StartsWith(search) || search == null).ToList());
 
                 }
                 catch (Exception Ex)

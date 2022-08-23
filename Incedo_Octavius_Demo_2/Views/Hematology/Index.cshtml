@@ -4,14 +4,7 @@
 }
 @using PagedList.Mvc;
 @using PagedList;
-@using (Html.BeginForm("Index", "Hematology", FormMethod.Get))
-{
 
-    @Html.RadioButton("option", "FirstName", true)<i> FirstName</i>
-    @Html.RadioButton("option", "LastName")<i> LastName</i>
-    @Html.TextBox("search")
-    <input type="submit" value="Search" />
-}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,6 +38,11 @@
             KOL-HEMATOLOGY-PROFILED
         </h2>
         <br />
+        
+        @using (Html.BeginForm("Index", "Hematology", FormMethod.Get))
+        {@Html.TextBox("search") <input type="submit" value="Search" />}
+
+
     </div>
 
     <div class="row" style="margin-left:70px;">

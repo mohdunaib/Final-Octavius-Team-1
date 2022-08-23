@@ -96,7 +96,7 @@ namespace Incedo_Octavius_Demo_2.Controllers
         }
 
         // GET: KOL_Image
-        public ActionResult Index(int ? page)
+        public ActionResult Index(int ? page, string search)
         {
             List<KOL_Image> kolNameImageList = new List<KOL_Image>();
             string constr = ConfigurationManager.ConnectionStrings["Incedo_Octavius_Demo_2_kol_table_Context"].ConnectionString;
@@ -131,6 +131,7 @@ namespace Incedo_Octavius_Demo_2.Controllers
                             kolNameImageList.Add(kolImage);
                         }
                     }
+                    return View(kolNameImageList.Where(s => s.First_Name.ToLower().StartsWith(search) || s.First_Name.ToUpper().StartsWith(search) || search == null).ToList().ToPagedList(page ?? 1, 8));
                 }
                 catch (Exception Ex)
                 {
@@ -144,7 +145,7 @@ namespace Incedo_Octavius_Demo_2.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(int profile, int ? page)
+        public ActionResult Index(int profile, int ? page,string search)
         {
             List<KOL_Image> kolNameImageList = new List<KOL_Image>();
             string constr = ConfigurationManager.ConnectionStrings["Incedo_Octavius_Demo_2_kol_table_Context"].ConnectionString;
@@ -179,6 +180,7 @@ namespace Incedo_Octavius_Demo_2.Controllers
                             kolNameImageList.Add(kolImage);
                         }
                     }
+                    return View(kolNameImageList.Where(s => s.First_Name.ToLower().StartsWith(search) || s.First_Name.ToUpper().StartsWith(search) || search == null).ToList().ToPagedList(page ?? 1, 8));
                 }
                 catch (Exception Ex)
                 {

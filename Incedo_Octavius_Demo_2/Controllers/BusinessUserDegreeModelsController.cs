@@ -21,7 +21,7 @@ namespace Incedo_Octavius_Demo_2.Controllers
         public string constr = ConfigurationManager.ConnectionStrings["Incedo_Octavius_Demo_2_Rules_BU_Deg_Context"].ConnectionString;
 
         // GET: BusinessUserDegreeModels
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
             List<BusinessUserDegreeModel> RuleDegBU_List = new List<BusinessUserDegreeModel>();
             //string constr = ConfigurationManager.ConnectionStrings["Incedo_Octavius_Demo_2_kol_table_Context"].ConnectionString;
@@ -54,7 +54,8 @@ namespace Incedo_Octavius_Demo_2.Controllers
                             RuleDegBU_List.Add(RuleDegBU);
                         }
                     }
-                    
+
+                    return View(RuleDegBU_List.Where(s => s.Degree_Master.ToLower().StartsWith(search) || s.Degree_Master.ToUpper().StartsWith(search) || search == null).ToList());
                 }
                 catch (Exception Ex)
                 {

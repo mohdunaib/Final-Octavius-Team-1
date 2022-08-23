@@ -21,36 +21,43 @@
     <p>
         @Html.ActionLink("Create New", "Create", routeValues: null, htmlAttributes: new { @class = "btn btn-primary", @role = "button" })
     </p>
-<table class="table table-primary table-hover">
-    <tr>
-        <th>
+    @using (Html.BeginForm("Index", "BusinessUserDegreeModels", FormMethod.Get))
+    {
+        @Html.TextBox("search")
+        <input type="submit" value="Search" />
+    }
+    <br/>
+    <table class="table table-primary table-hover">
+        <tr>
+            <th>
                 @Html.DisplayNameFor(model => model.Degree_Map)
-        </th>
-        <th>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Degree_Master)
-        </th>
-        <th></th>
-    </tr>
+            </th>
+            <th></th>
+        </tr>
 
         @foreach (var item in Model)
         {
-                                                                                                                        <tr>
-                                                                                                                            <td>
+            <tr>
+                <td>
                     @Html.DisplayFor(modelItem => item.Degree_Map)
-                                                                                                                            </td>
-                                                                                                                            <td>
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Degree_Master)
-                                                                                                                            </td>
-                                                                                                                            <td>
+                </td>
+                <td>
 
                     @* @Html.ActionLink("Edit", "Edit", new { id=item.MapID})  *@
-                                            <button class = "btn btn-warning" onclick="location.href='@Url.Action("Edit", new {id=item.MapID})'">Edit</button> 
-                                            <button class = "btn btn-danger" onclick="location.href='@Url.Action("Delete", new {id=item.MapID})'">Delete</button>
-                    @* @Html.ActionLink("Delete", "Delete", new { id=item.MapID })  *@                                                   </td>
-                                                                                                                        </tr>
+                    <button class="btn btn-warning" onclick="location.href='@Url.Action("Edit", new {id=item.MapID})'">Edit</button>
+                    <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", new {id=item.MapID})'">Delete</button>
+                    @* @Html.ActionLink("Delete", "Delete", new { id=item.MapID })  *@
+                </td>
+            </tr>
         }
 
-</table>
+    </table>
 
 </body>
 </html>
