@@ -36,7 +36,7 @@
 <body>
     <div class="justify-content-between">
         <h2 class="text-dark text-center alert-heading">
-            KOL-ONCOLOGY-PROFILED
+            KOL-ONCOLOGY
         </h2>
         <br />
 
@@ -54,17 +54,17 @@
     <div class="row" style="margin-left:70px;">
         @foreach (var item in Model)
         {
-            <div class="col-md-3" style="width:250px;margin:30px">
-                <div class="card my_card">
-                    <img src="@item.Image_URL" class="card-img-top rounded-circle my_img" alt="Dummy Profile Pic">
-                    <div class="card-body">
+                <div class="col-md-3" style="width:250px;margin:30px">
+                    <div class="card my_card">
+                        <img src="@item.Image_URL" class="card-img-top rounded-circle my_img" alt="Dummy Profile Pic">
+                        <div class="card-body">
 
-                        <h4 class="card-title">
+                            <h4 class="card-title">
                             @Html.ActionLink(item.First_Name + " " + item.Last_Name, "Details", "KOL_Details", new { id = item.kolID }, null)
-                        </h4>
+                            </h4>
+                        </div>
                     </div>
                 </div>
-            </div>
         }
     </div>
 
