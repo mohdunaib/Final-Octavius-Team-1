@@ -18,15 +18,41 @@ namespace Incedo_Octavius_Demo_2.Controllers
         {
             if (uname.ToLower() == "john")
             {
-                return RedirectToAction("Index","Oncology");
+                if (password == "Yash")
+                {
+
+                 return RedirectToAction("Index", "Oncology");
+                }
+                else
+                {
+                    return Content("Wrong User Name or Password!");
+                }
             }
             else if(uname.ToLower()=="jack")
             {
-                return RedirectToAction("Index", "Hematology");
+                if (password == "Yash")
+                {
+
+
+                    return RedirectToAction("Index", "Hematology");
+                }
+                else
+                {
+                    return Content("Wrong User Name or Password!");
+                }
             }
             else if (uname.ToLower() == "mark")
             {
-                return RedirectToAction("Index", "BusinessUserHome");
+                if (password == "Yash")
+                {
+
+
+                    return RedirectToAction("Index", "BusinessUserHome");
+                }
+                else
+                {
+                    return Content("Wrong User Name or Password!");
+                }
             }
 
             return Content("User Not Authorized");
