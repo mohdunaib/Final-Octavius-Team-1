@@ -4,6 +4,7 @@
     ViewBag.Title = "Delete";
 }
 
+<div style="margin:25px;">
 <h2>Delete</h2>
 
 <h3>Are you sure you want to delete this?</h3>
@@ -12,29 +13,31 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Degree_Map)
+                @Html.DisplayNameFor(model => model.Degree_Map)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Degree_Map)
+                @Html.DisplayFor(model => model.Degree_Map)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Degree_Master)
+                @Html.DisplayNameFor(model => model.Degree_Master)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Degree_Master)
+                @Html.DisplayFor(model => model.Degree_Master)
         </dd>
 
     </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-primary" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-primary" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+</div>
 </div>
