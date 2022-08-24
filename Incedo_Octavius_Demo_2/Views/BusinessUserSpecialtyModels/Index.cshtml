@@ -16,7 +16,7 @@
 }
 <br />
 
-<table class="table table-primary table-hover">
+<table class="table table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.SpecialtyMap)
@@ -37,10 +37,9 @@
                 @Html.DisplayFor(modelItem => item.SpecialtyMaster)
             </td>
             <td>
-                @* @Html.ActionLink("Edit", "Edit", new { id = item.MapID }) | *@
-                <button class="btn btn-warning" onclick="location.href='@Url.Action("Edit", new {id=item.MapID})'">Edit</button>
-                <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", new {id=item.MapID})'">Delete</button>
-                @* @Html.ActionLink("Delete", "Delete", new { id = item.MapID }) *@
+                @Html.ActionLink("Edit", "Edit", new { id = item.MapID }) | 
+                
+                 @Html.ActionLink("Delete", "Delete", new { id = item.MapID }) 
             </td>
         </tr>
     }

@@ -39,10 +39,8 @@
         </h2>
         @using (Html.BeginForm("Index", "KOL_Image", FormMethod.Get))
         {
-
-            @Html.RadioButton("option", "FirstName", true)<i> FirstName</i>
-            @Html.RadioButton("option", "LastName")<i> LastName</i>
-            @Html.TextBox("search")<input type="submit" value="Search" />
+            @Html.TextBox("search")
+            <input type="submit" value="Search" />
         }
         <br />
 

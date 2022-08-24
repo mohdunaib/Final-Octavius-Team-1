@@ -27,7 +27,7 @@
         <input type="submit" value="Search" />
     }
     <br/>
-    <table class="table table-primary table-hover">
+    <table class="table table table-hover">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Degree_Map)
@@ -50,8 +50,9 @@
                 <td>
 
                     @* @Html.ActionLink("Edit", "Edit", new { id=item.MapID})  *@
-                    <button class="btn btn-warning" onclick="location.href='@Url.Action("Edit", new {id=item.MapID})'">Edit</button>
-                    <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", new {id=item.MapID})'">Delete</button>
+                    <i class="bi bi-pen"><button class="btn " onclick="location.href='@Url.Action("Edit", new {id=item.MapID})'">Edit</button></i>
+                    
+                    <button class="btn " onclick="location.href='@Url.Action("Delete", new {id=item.MapID})'">Delete</button>
                     @* @Html.ActionLink("Delete", "Delete", new { id=item.MapID })  *@
                 </td>
             </tr>
