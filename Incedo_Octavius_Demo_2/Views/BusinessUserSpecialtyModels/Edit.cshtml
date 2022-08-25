@@ -3,46 +3,47 @@
 @{
     ViewBag.Title = "Edit";
 }
-
+<div style="margin:25px;">
 <h2>Edit</h2>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>BusinessUserSpecialtyModel</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.MapID)
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.SpecialtyMap, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SpecialtyMap, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SpecialtyMap, "", new { @class = "text-danger" })
+            <div class="form-horizontal">
+                <h4>BusinessUserSpecialtyModel</h4>
+                <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.MapID)
+
+                <div class="form-group">
+                @Html.LabelFor(model => model.SpecialtyMap, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                    @Html.EditorFor(model => model.SpecialtyMap, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SpecialtyMap, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                @Html.LabelFor(model => model.SpecialtyMaster, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                    @*@Html.EditorFor(model => model.SpecialtyMaster, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Degree_Master, "", new { @class = "text-danger" })*@
+
+                    @Html.DropDownListFor(model => model.Parent_Specialty_ID, ViewBag.SpecialtyListItem as SelectList, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SpecialtyMaster, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.SpecialtyMaster, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @*@Html.EditorFor(model => model.SpecialtyMaster, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Degree_Master, "", new { @class = "text-danger" })*@
-
-                @Html.DropDownListFor(model => model.Parent_Specialty_ID, ViewBag.SpecialtyListItem as SelectList, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.SpecialtyMaster, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </div>
-    </div>
-}
+    }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Back to List", "Index")
+</div>
 </div>
